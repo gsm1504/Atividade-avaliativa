@@ -88,3 +88,58 @@ class cachorro{
     }
 }
 
+# Avaliação qualitativa(valendo 4 pontos)
+
+void main(){
+  Criar conta = Criar(123456789,"Gabriel",1000,nome_da_mae:"Bianca");
+  void iniciacao(){
+    print("Olá cliente");
+  }
+  
+  iniciacao();
+  conta.saldotemp();
+  
+  conta.deposito(500);
+  conta.saldotemp();
+  
+  conta.saque(750);
+  conta.saldotemp();
+  
+  conta.saque(800);
+  
+    
+}
+
+class Criar{
+  int n_conta;
+  String nome;
+  double saldo;
+  
+  Criar(int a, String b,double c, {String nome_da_mae}){
+    this.n_conta = a;
+    this.nome=b;
+    this.saldo=c;
+  }
+  
+   void saldotemp(){
+    print("O saldo atual é : ${this.saldo}");
+  }
+  
+    voidtranferencia(double valor_transferido, int num_conta, int num_receptor){
+    this.saldo = this.saldo - valor_transferido;
+  }
+  
+  void deposito(double valor_depositado) => (this.saldo = this.saldo + valor_depositado);
+  
+ 
+  
+ void saque(int valor_saque){
+   if(valor_saque>this.saldo){
+     print("Saque inválido");
+   }
+   else{
+    this.saldo = this.saldo -valor_saque;
+   }
+  }
+}
+
